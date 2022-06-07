@@ -17,8 +17,8 @@ const EnterCoin = () => (
 			}}
 			onSubmit={async (values) => {
 				await new Promise((r) => setTimeout(r, 500));
+				//TODO - Change this to push the coin and amount to the main coin list
 				alert(JSON.stringify(values, null, 2));
-				//Change this to push the coin and amount to the main coin list
 			}}
 		>
 			<Form>
