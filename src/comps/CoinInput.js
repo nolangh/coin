@@ -1,20 +1,34 @@
 import React from "react";
 import { Formik, Field, Form } from "formik";
-import { Window, WindowContent, TextField, NumberField, Button } from "react95";
+import { useState } from "react";
+import {
+	Window,
+	WindowContent,
+	TextField,
+	NumberField,
+	Button,
+	Bar,
+	Divider,
+} from "react95";
 import styled from "styled-components";
 
 const CoinInput = styled.div`
 	width: 50%;
 	padding: 5rem;
+	.bar {
+		width: 100%;
+	}
 `;
 
 const EnterCoin = () => (
-	<Window>
-		<WindowContent>
-			<CoinInput>
+	<CoinInput>
+		<Window>
+			<Bar className="bar">
 				<h1>ENTER COIN</h1>
+			</Bar>
+			<WindowContent>
 				<Formik
-					coinValues={{
+					initialValues={{
 						coin: "",
 						amount: "",
 					}}
@@ -26,17 +40,17 @@ const EnterCoin = () => (
 				>
 					<Form>
 						<label htmlFor="coin">COIN:</label>
-						<TextField id="coin" name="coin" placeholder="COIN" />
+						<Field id="coin" name="coin" placeholder="COIN" />
 
 						<label htmlFor="amount">AMOUNT:</label>
-						<NumberField id="amount" name="amount" placeholder="0" />
+						<Field id="amount" name="amount" placeholder="0" />
 
 						<Button type="submit">ADD COIN</Button>
 					</Form>
 				</Formik>
-			</CoinInput>
-		</WindowContent>
-	</Window>
+			</WindowContent>
+		</Window>
+	</CoinInput>
 );
 
 //ReactDOM.render(<Basic />, document.getElementById("root"));

@@ -1,5 +1,5 @@
 import React from "react";
-import { Panel, Window, WindowContent } from "react95";
+import { Panel, Window, WindowContent, Bar } from "react95";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
@@ -9,13 +9,19 @@ const Wrapper = styled.div`
 	.window {
 		width: 100%;
 	}
+	.bar {
+		width: 100%;
+	}
 `;
 
 const TotalValue = () => {
 	return (
 		<Wrapper>
-			<Window resizable className="window">
-				<Panel
+			<Window className="window">
+				<Bar className="bar">
+					<h1>VALUE</h1>
+				</Bar>
+				{/* <Panel
 					variant="inside"
 					shadow
 					style={{
@@ -26,7 +32,7 @@ const TotalValue = () => {
 					}}
 				>
 					<h1>VALUE</h1>
-				</Panel>
+				</Panel> */}
 				<WindowContent>
 					<h1>$2500</h1>
 					{/* NOTE UseState to change this when a new coin is added */}

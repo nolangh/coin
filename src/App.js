@@ -1,5 +1,5 @@
-import "./index.css";
-import "./App.css";
+import "./styles/index.css";
+import "./styles/App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import React from "react";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
@@ -7,7 +7,6 @@ import { styleReset } from "react95";
 import original from "react95/dist/themes/original";
 import ms_sans_serif from "react95/dist/fonts/ms_sans_serif.woff2";
 import ms_sans_serif_bold from "react95/dist/fonts/ms_sans_serif_bold.woff2";
-import { Container } from "react-bootstrap";
 import TotalValue from "./comps/Total";
 import EnterCoin from "./comps/CoinInput";
 
