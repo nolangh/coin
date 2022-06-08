@@ -1,0 +1,13 @@
+/* -------------------------------- Variables ------------------------------- */
+$blue: #0000ff;
+$black: #000000;
+$grey: #c0c0c0;
+
+.top-container {
+	display: flex;
+	flex-direction: row;
+	width: 100vw;
+	height: 80%;
+	overflow: hidden;
+	background-color: $blue;
+}

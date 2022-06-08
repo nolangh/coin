@@ -1,0 +1,9 @@
+/* -------------------------------- Variables ------------------------------- */
+.top-container {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  height: 80%;
+  overflow: hidden;
+  background-color: #0000ff;
+}/*# sourceMappingURL=App.css.map */
