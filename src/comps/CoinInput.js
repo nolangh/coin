@@ -18,6 +18,10 @@ const CoinInput = styled.div`
 	.bar {
 		width: 100%;
 	}
+	.text {
+		width: 25%;
+		height: 1rem;
+	}
 `;
 
 const EnterCoin = () => (
@@ -34,16 +38,26 @@ const EnterCoin = () => (
 					}}
 					onSubmit={async (values) => {
 						await new Promise((r) => setTimeout(r, 500));
-						//TODO - Change this to push the coin and amount to the main coin list
+						// TODO - Change this to push the coin and amount to the main coin list
 						alert(JSON.stringify(values, null, 2));
 					}}
 				>
 					<Form>
 						<label htmlFor="coin">COIN:</label>
-						<Field id="coin" name="coin" placeholder="COIN" />
+						<TextField
+							className="text"
+							id="coin"
+							name="coin"
+							placeholder="COIN"
+						/>
 
 						<label htmlFor="amount">AMOUNT:</label>
-						<Field id="amount" name="amount" placeholder="0" />
+						<NumberField
+							classNAME="number"
+							id="amount"
+							name="amount"
+							placeholder="0"
+						/>
 
 						<Button type="submit">ADD COIN</Button>
 					</Form>
