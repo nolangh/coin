@@ -9,6 +9,7 @@ import ms_sans_serif from "react95/dist/fonts/ms_sans_serif.woff2";
 import ms_sans_serif_bold from "react95/dist/fonts/ms_sans_serif_bold.woff2";
 import { Container } from "react-bootstrap";
 import TotalValue from "./comps/Total";
+import EnterCoin from "./comps/CoinInput";
 
 const GlobalStyles = createGlobalStyle`
   @font-face {
@@ -35,6 +36,7 @@ const App = () => (
 		<ThemeProvider theme={original}>
 			<div className="top-container">
 				<TotalValue />
+				<EnterCoin />
 			</div>
 		</ThemeProvider>
 	</div>
