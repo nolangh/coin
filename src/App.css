@@ -3,3 +3,14 @@
 	height: 100vh;
 	background-color: coral;
 }
+
+.top-container {
+	width: 100%;
+	height: 40%;
+	background-color: lightblue;
+}
+
+.Asset-Value {
+	width: 20rem;
+	background-image: blue;
+}

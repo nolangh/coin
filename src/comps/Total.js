@@ -1,5 +1,5 @@
 import React from "react";
-import { Panel, Window, WindowContent, WindowHeader } from "react95";
+import { Panel, Window, WindowContent } from "react95";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
@@ -13,7 +13,7 @@ const TotalValue = () => {
 			<Wrapper>
 				<Window>
 					<Panel
-						variant="outside"
+						variant="inside"
 						shadow
 						style={{
 							padding: "0.5rem",
