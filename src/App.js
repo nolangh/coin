@@ -9,7 +9,7 @@ import ms_sans_serif from "react95/dist/fonts/ms_sans_serif.woff2";
 import ms_sans_serif_bold from "react95/dist/fonts/ms_sans_serif_bold.woff2";
 import TotalValue from "./comps/Total";
 import { EnterCoin } from "./comps/CoinInput";
-import AssetList from "./comps/list";
+import AssetList from "./comps/List";
 
 const GlobalStyles = createGlobalStyle`
   @font-face {
