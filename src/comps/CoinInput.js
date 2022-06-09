@@ -19,6 +19,7 @@ const CoinInput = styled.div`
 		flex-direction: column;
 		background-color: green;
 	}
+	
 	.bar {
 		width: 100%;
 	}
