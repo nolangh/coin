@@ -1,5 +1,5 @@
 import React from "react";
-import { Panel, Window, WindowContent, Bar } from "react95";
+import { Window, WindowContent, Bar } from "react95";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
