@@ -37,6 +37,9 @@ const App = () => (
 				<TotalValue />
 				<EnterCoin />
 			</div>
+			<div className="bottom-container">
+				<h1>placeholder</h1>
+			</div>
 		</ThemeProvider>
 	</div>
 );

@@ -1,22 +1,15 @@
 import React from "react";
 import { Formik, Field, Form } from "formik";
 import "98.css";
-import {
-	Window,
-	WindowContent,
-	TextField,
-	NumberField,
-	Button,
-	Bar,
-	Divider,
-} from "react95";
+import { Window, WindowContent, Button, Bar, Divider } from "react95";
 import styled from "styled-components";
 
 /* --------------------------------- Styles --------------------------------- */
 const CoinInput = styled.div`
-	width: 50%;
+	width: 30%;
 	padding: 5rem;
-	form {
+	background-color: lightyellow;
+	.form {
 		display: flex;
 		flex-direction: column;
 		background-color: green;
@@ -26,17 +19,16 @@ const CoinInput = styled.div`
 		width: 100%;
 	}
 `;
+
 /* ------------------------------------------------------------------------ */
 
 const assets = [{}];
 
 const EnterCoin = () => (
 	<CoinInput>
-		<Window>
-			<Bar className="bar">
-				<h1>ENTER COIN</h1>
-			</Bar>
-			<WindowContent>
+		<Window className="window">
+			<Bar className="bar">ENTER COIN</Bar>
+			<WindowContent className="windowContent">
 				<Formik
 					className="form"
 					initialValues={{
