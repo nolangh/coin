@@ -1,6 +1,7 @@
 import React from "react";
 import { Window, WindowContent, Bar } from "react95";
 import styled from "styled-components";
+import { assets } from "./CoinInput";
 
 const Wrapper = styled.div`
 	padding: 5rem;

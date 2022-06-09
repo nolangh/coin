@@ -82,4 +82,4 @@ const EnterCoin = () => (
 
 //ReactDOM.render(<Basic />, document.getElementById("root"));
 
-export default EnterCoin;
+export { EnterCoin, assets };
