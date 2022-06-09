@@ -1,6 +1,5 @@
 import React from "react";
 import { Formik, Field, Form } from "formik";
-import { useState } from "react";
 import {
 	Window,
 	WindowContent,
@@ -15,12 +14,20 @@ import styled from "styled-components";
 const CoinInput = styled.div`
 	width: 50%;
 	padding: 5rem;
+	form {
+		display: flex;
+		flex-direction: column;
+		background-color: green;
+	}
 	.bar {
 		width: 100%;
 	}
 	.text {
 		width: 25%;
 		height: 1rem;
+	}
+	.number {
+		width: 10%;
 	}
 `;
 
@@ -32,6 +39,7 @@ const EnterCoin = () => (
 			</Bar>
 			<WindowContent>
 				<Formik
+					className="form"
 					initialValues={{
 						coin: "",
 						amount: "",
@@ -50,10 +58,11 @@ const EnterCoin = () => (
 							name="coin"
 							placeholder="COIN"
 						/>
+						<Divider />
 
 						<label htmlFor="amount">AMOUNT:</label>
 						<NumberField
-							classNAME="number"
+							className="number"
 							id="amount"
 							name="amount"
 							placeholder="0"
