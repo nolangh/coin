@@ -6,11 +6,15 @@ import { assets } from "./CoinInput";
 const Wrapper = styled.div`
 	padding: 5rem;
 	width: 50%;
-	//background: ___CSS_0___;
+	background: ___CSS_0___;
 	.window {
+		text-align: center;
 		width: 100%;
 	}
 	.bar {
+		text-align: center;
+		height: 3rem;
+		font-size: 2rem;
 		width: 100%;
 	}
 `;
@@ -19,9 +23,7 @@ const TotalValue = () => {
 	return (
 		<Wrapper>
 			<Window className="window">
-				<Bar className="bar">
-					<h1>VALUE</h1>
-				</Bar>
+				<Bar className="bar">VALUE</Bar>
 				{/* <Panel
 					variant="inside"
 					shadow
