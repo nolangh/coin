@@ -17,12 +17,8 @@ const CoinInput = styled.div`
 	}
 `;
 
-const Container = styled.div`
-	display: flex;
-	flex-direction: row;
-`;
-
 const Wrapper = styled.div`
+	height: 100%;
 	padding: 5rem;
 	width: 50%;
 	background: ___CSS_0___;
@@ -45,13 +41,12 @@ const TotalAssets = [];
 const arraySum = TotalAssets.reduce(
 	(previousValue, currentValue) => previousValue + currentValue
 );
-
-console.log(arraySum);
+//console.log(arraySum);
 // const sum = 0;
 
 const EnterCoin = () => {
 	return (
-		<Container>
+		<Wrapper>
 			<CoinInput>
 				<Window className="window">
 					<Bar className="bar">ENTER COIN</Bar>
@@ -105,14 +100,12 @@ const EnterCoin = () => {
 					</WindowContent>
 				</Window>
 			</CoinInput>
-			<Wrapper>
-				<Window className="window">
-					<Bar className="bar">VALUE</Bar>
+			<Window className="window">
+				<Bar className="bar">VALUE</Bar>
 
-					<WindowContent></WindowContent>
-				</Window>
-			</Wrapper>
-		</Container>
+				<WindowContent></WindowContent>
+			</Window>
+		</Wrapper>
 	);
 };
 
