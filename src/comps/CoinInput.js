@@ -1,4 +1,5 @@
 import React from "react";
+import { useEffect } from "react";
 import { Formik, Field, Form } from "formik";
 import "98.css";
 import { Window, WindowContent, Button, Bar, Divider } from "react95";
@@ -22,15 +23,16 @@ const CoinInput = styled.div`
 
 /* ------------------------------------------------------------------------ */
 
-const TotalAssets = [];
 const assets = [{}];
-let sum = 0;
+const TotalAssets = [];
+const arraySum = TotalAssets.reduce(
+	(previousValue, currentValue) => previousValue + currentValue
+);
+
+console.log(arraySum);
+// const sum = 0;
 
 const EnterCoin = () => {
-	function Add(v) {
-		sum += v;
-	}
-
 	return (
 		<CoinInput>
 			<Window className="window">
@@ -47,8 +49,6 @@ const EnterCoin = () => {
 							assets.push(JSON.stringify(values, null, 2));
 							TotalAssets.push(values.amount);
 							console.log(TotalAssets);
-							console.log(sum);
-							// useState to update TotalAssets when this is submited
 						}}
 					>
 						<Form>
@@ -67,6 +67,7 @@ const EnterCoin = () => {
 							</div>
 
 							<Divider />
+
 							<div class="field-row-stacked">
 								<label for="text24" htmlFor="amount">
 									AMOUNT:
@@ -91,4 +92,4 @@ const EnterCoin = () => {
 
 //ReactDOM.render(<Basic />, document.getElementById("root"));
 
-export { EnterCoin, assets };
+export { EnterCoin, arraySum };

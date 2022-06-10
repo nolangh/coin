@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Window, WindowContent, Bar } from "react95";
 import styled from "styled-components";
-import { assets } from "./CoinInput";
+import { arraySum } from "./CoinInput";
 
 const Wrapper = styled.div`
 	padding: 5rem;
@@ -18,16 +18,8 @@ const Wrapper = styled.div`
 		width: 100%;
 	}
 `;
-const TotalAssets = [];
-assets.forEach(() => {
-	let totalAmount = assets.amount;
-	TotalAssets.push(totalAmount);
-	console.log(TotalAssets);
-});
 
 const TotalValue = () => {
-	const [currentValue, setCurrentValue] = useState(0);
-
 	return (
 		<Wrapper>
 			<Window className="window">
@@ -44,7 +36,7 @@ const TotalValue = () => {
 				>
 					<h1>VALUE</h1>
 				</Panel> */}
-				<WindowContent>${currentValue}</WindowContent>
+				<WindowContent></WindowContent>
 			</Window>
 		</Wrapper>
 	);
