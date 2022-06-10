@@ -22,63 +22,72 @@ const CoinInput = styled.div`
 
 /* ------------------------------------------------------------------------ */
 
+const TotalAssets = [];
 const assets = [{}];
+let sum = 0;
 
-const EnterCoin = () => (
-	<CoinInput>
-		<Window className="window">
-			<Bar className="bar">ENTER COIN</Bar>
-			<WindowContent className="windowContent">
-				<Formik
-					className="form"
-					initialValues={{
-						coin: "",
-						amount: "",
-					}}
-					onSubmit={async (values) => {
-						await new Promise((r) => setTimeout(r, 500));
-						// TODO - Change this to push the coin and amount to the main coin list
-						assets.push(JSON.stringify(values, null, 2));
-						console.log(assets);
-					}}
-				>
-					<Form>
-						<div class="field-row">
-							<label htmlFor="coin" for="text17">
-								COIN:
-							</label>
-							<Field
-								className="text"
-								//id="coin"
-								id="text17"
-								type="text"
-								name="coin"
-								placeholder="COIN"
-							/>
-						</div>
+const EnterCoin = () => {
+	function Add(v) {
+		sum += v;
+	}
 
-						<Divider />
-						<div class="field-row-stacked">
-							<label for="text24" htmlFor="amount">
-								AMOUNT:
-							</label>
-							<Field
-								className="number"
-								id="text24"
-								type="number"
-								value="0"
-								name="amount"
-								placeholder="0"
-							/>
-						</div>
+	return (
+		<CoinInput>
+			<Window className="window">
+				<Bar className="bar">ENTER COIN</Bar>
+				<WindowContent className="windowContent">
+					<Formik
+						className="form"
+						initialValues={{
+							coin: "",
+							amount: "",
+						}}
+						onSubmit={async (values) => {
+							await new Promise((r) => setTimeout(r, 500));
+							assets.push(JSON.stringify(values, null, 2));
+							TotalAssets.push(values.amount);
+							console.log(TotalAssets);
+							console.log(sum);
+							// useState to update TotalAssets when this is submited
+						}}
+					>
+						<Form>
+							<div class="field-row">
+								<label htmlFor="coin" for="text17">
+									COIN:
+								</label>
+								<Field
+									className="text"
+									//id="coin"
+									id="text17"
+									type="text"
+									name="coin"
+									placeholder="COIN"
+								/>
+							</div>
 
-						<Button type="submit">ADD COIN</Button>
-					</Form>
-				</Formik>
-			</WindowContent>
-		</Window>
-	</CoinInput>
-);
+							<Divider />
+							<div class="field-row-stacked">
+								<label for="text24" htmlFor="amount">
+									AMOUNT:
+								</label>
+								<Field
+									className="number"
+									id="text24"
+									type="number"
+									name="amount"
+									placeholder="0"
+								/>
+							</div>
+
+							<Button type="submit">ADD COIN</Button>
+						</Form>
+					</Formik>
+				</WindowContent>
+			</Window>
+		</CoinInput>
+	);
+};
 
 //ReactDOM.render(<Basic />, document.getElementById("root"));
 

@@ -30,6 +30,8 @@ const GlobalStyles = createGlobalStyle`
   ${styleReset}
 `;
 
+// NOTE Use this link for chart js https://react-chartjs-2.netlify.app/
+
 const App = () => (
 	<div className="App">
 		<GlobalStyles />
