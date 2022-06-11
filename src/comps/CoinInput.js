@@ -1,5 +1,5 @@
 import React from "react";
-import { useEffect, useMemo } from "react";
+import { useEffect } from "react";
 import { Formik, Field, Form } from "formik";
 import "98.css";
 import { Window, WindowContent, Button, Bar, Divider } from "react95";
@@ -41,7 +41,7 @@ const TotalAssets = [];
 const arraySum = TotalAssets.reduce(
 	(previousValue, currentValue) => previousValue + currentValue
 );
-//console.log(arraySum);
+console.log(arraySum);
 // const sum = 0;
 
 const EnterCoin = () => {
@@ -100,11 +100,6 @@ const EnterCoin = () => {
 					</WindowContent>
 				</Window>
 			</CoinInput>
-			<Window className="window">
-				<Bar className="bar">VALUE</Bar>
-
-				<WindowContent></WindowContent>
-			</Window>
 		</Wrapper>
 	);
 };
