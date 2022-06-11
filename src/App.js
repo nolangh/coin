@@ -1,14 +1,14 @@
 import "./styles/index.css";
 import "./styles/App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 import React from "react";
-import "98.css";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
-import styled from "styled-components";
 import { styleReset } from "react95";
 import original from "react95/dist/themes/original";
 import ms_sans_serif from "react95/dist/fonts/ms_sans_serif.woff2";
 import ms_sans_serif_bold from "react95/dist/fonts/ms_sans_serif_bold.woff2";
-import EnterCoin from "./comps/CoinInput";
+import TotalValue from "./comps/Total";
+import { EnterCoin } from "./comps/CoinInput";
 import AssetList from "./comps/List";
 
 const GlobalStyles = createGlobalStyle`
@@ -37,6 +37,7 @@ const App = () => (
 		<GlobalStyles />
 		<ThemeProvider theme={original}>
 			<div className="top-container">
+				<TotalValue />
 				<EnterCoin />
 			</div>
 			<div className="bottom-container">

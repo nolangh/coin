@@ -3,10 +3,6 @@ $blue: #0000ff;
 $black: #000000;
 $grey: #c0c0c0;
 
-html {
-	height: 100%;
-}
-
 .App {
 	height: 100vh;
 	display: flex;
@@ -15,7 +11,7 @@ html {
 	.top-container {
 		display: flex;
 		flex-direction: row;
-		width: 100%;
+		width: 100vw;
 		height: 30%;
 		background-color: $blue;
 	}

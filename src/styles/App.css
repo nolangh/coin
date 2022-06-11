@@ -1,8 +1,4 @@
 /* -------------------------------- Variables ------------------------------- */
-html {
-  height: 100%;
-}
-
 .App {
   height: 100vh;
   display: flex;
@@ -11,7 +7,7 @@ html {
 .App .top-container {
   display: flex;
   flex-direction: row;
-  width: 100%;
+  width: 100vw;
   height: 30%;
   background-color: #0000ff;
 }
