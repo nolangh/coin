@@ -2,7 +2,6 @@ import { assets } from "./CoinInput";
 import styled from "styled-components";
 import { Window, Bar, WindowContent, Fieldset } from "react95";
 import React from "react";
-import "98.css";
 
 const Main = styled.div`
 	display: flex;
