@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { Formik, Field, Form } from "formik";
 import "98.css";
+import { useValue } from "../hooks/useValue";
 import { Window, WindowContent, Button, Bar, Divider } from "react95";
 import styled from "styled-components";
 
@@ -41,29 +42,19 @@ const Wrapper = styled.div`
 
 /* ------------------------------------------------------------------------ */
 
+const TotalAssets = [];
+const assets = [{}];
+
 const EnterCoin = () => {
-	const assets = [{}];
-	const TotalAssets = [];
-	const [currentValue, setValue] = useState(0);
+	const [currentValue, sum] = useValue(0);
+	const [inputValue, setInputValue] = useState("");
 
 	return (
 		<CoinInput>
 			<Wrapper>
 				<Window className="window">
 					<Bar className="bar">TOTAL VALUE</Bar>
-					{/* <Panel
-					variant="inside"
-					shadow
-					style={{
-						padding: "0.5rem",
-						lineHeight: "1.5",
-						width: "100%",
-						height: "2em",
-					}}
-				>
-					<h1>VALUE</h1>
-				</Panel> */}
-					<WindowContent>{currentValue}</WindowContent>
+					<WindowContent>$ {currentValue}</WindowContent>
 				</Window>
 			</Wrapper>
 			<Window className="window">
@@ -80,27 +71,20 @@ const EnterCoin = () => {
 							assets.push(JSON.stringify(values, null, 2));
 							TotalAssets.push(values.amount);
 							console.log(TotalAssets);
-							const sum = TotalAssets.reduce(function(sum, number) {
-								const arraySum = sum + number;
-								return arraySum;
-							}, 0);
-
-							console.log(sum);
-							// useState to update TotalAssets when this is submited
+							sum();
 						}}
 					>
 						<Form>
 							<div class="field-row">
-								<label htmlFor="coin" for="text17">
+								<label htmlFor="title" for="text17">
 									TITLE:
 								</label>
 								<Field
 									className="text"
-									//id="coin"
 									id="text17"
 									type="text"
-									name="coin"
-									placeholder="COIN"
+									name="title"
+									placeholder=""
 								/>
 							</div>
 
@@ -118,7 +102,9 @@ const EnterCoin = () => {
 								/>
 							</div>
 
-							<Button type="submit">ENTER</Button>
+							<Button onClick={sum} type="submit">
+								ENTER
+							</Button>
 						</Form>
 					</Formik>
 				</WindowContent>
@@ -131,4 +117,4 @@ const EnterCoin = () => {
 
 //ReactDOM.render(<Basic />, document.getElementById("root"));
 
-export { EnterCoin };
+export { EnterCoin, TotalAssets };
