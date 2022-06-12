@@ -69,6 +69,11 @@ const Main = styled.div`
 	}
 `;
 
+const ListDiv = styled.div`
+	width: 100%;
+	height: 3rem;
+`;
+
 /* ------------------------------------------------------------------------ */
 
 const TotalAssets = [];
@@ -76,7 +81,7 @@ const assets = [{}];
 
 const EnterCoin = () => {
 	const [currentValue, sum] = useValue();
-	const [list, setList] = useList();
+	const [list, setUpdate] = useList();
 
 	return (
 		<App>
@@ -103,8 +108,9 @@ const EnterCoin = () => {
 								await new Promise((r) => setTimeout(r, 500));
 								assets.push(JSON.stringify(values, null, 2));
 								TotalAssets.push(values.amount);
-								console.log(TotalAssets);
+								console.log(assets);
 								sum();
+								setUpdate();
 							}}
 						>
 							<Form>
@@ -135,7 +141,7 @@ const EnterCoin = () => {
 									/>
 								</div>
 
-								<Button onClick={setList} type="submit">
+								<Button onClick={setUpdate} type="submit">
 									ENTER
 								</Button>
 							</Form>
