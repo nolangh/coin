@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import { Formik, Field, Form } from "formik";
 import "98.css";
 import { Window, WindowContent, Button, Bar, Divider } from "react95";
@@ -6,40 +7,72 @@ import styled from "styled-components";
 
 /* --------------------------------- Styles --------------------------------- */
 const CoinInput = styled.div`
-	width: 30%;
+	display: flex;
+	flex-direction: row;
+	width: 100%;
 	padding: 5rem;
 	background-color: lightyellow;
 	.form {
-		display: flex;
-		flex-direction: column;
 		background-color: green;
+		padding: 0;
 	}
 
 	.bar {
+		height: 3rem;
+		width: 100%;
+	}
+`;
+
+const Wrapper = styled.div`
+	padding: 5rem;
+	width: 50%;
+	background: ___CSS_0___;
+	.window {
+		text-align: center;
+		width: 100%;
+	}
+	.bar {
+		text-align: center;
+		height: 3rem;
+		font-size: 2rem;
 		width: 100%;
 	}
 `;
 
 /* ------------------------------------------------------------------------ */
 
-const TotalAssets = [];
-const assets = [{}];
-let sum = 0;
-
 const EnterCoin = () => {
-	function Add(v) {
-		sum += v;
-	}
+	const assets = [{}];
+	const TotalAssets = [];
+	const [currentValue, setValue] = useState(0);
 
 	return (
 		<CoinInput>
+			<Wrapper>
+				<Window className="window">
+					<Bar className="bar">TOTAL VALUE</Bar>
+					{/* <Panel
+					variant="inside"
+					shadow
+					style={{
+						padding: "0.5rem",
+						lineHeight: "1.5",
+						width: "100%",
+						height: "2em",
+					}}
+				>
+					<h1>VALUE</h1>
+				</Panel> */}
+					<WindowContent>{currentValue}</WindowContent>
+				</Window>
+			</Wrapper>
 			<Window className="window">
-				<Bar className="bar">ENTER COIN</Bar>
+				<Bar className="bar">ENTER VALUE</Bar>
 				<WindowContent className="windowContent">
 					<Formik
 						className="form"
 						initialValues={{
-							coin: "",
+							title: "",
 							amount: "",
 						}}
 						onSubmit={async (values) => {
@@ -47,6 +80,11 @@ const EnterCoin = () => {
 							assets.push(JSON.stringify(values, null, 2));
 							TotalAssets.push(values.amount);
 							console.log(TotalAssets);
+							const sum = TotalAssets.reduce(function(sum, number) {
+								const arraySum = sum + number;
+								return arraySum;
+							}, 0);
+
 							console.log(sum);
 							// useState to update TotalAssets when this is submited
 						}}
@@ -54,7 +92,7 @@ const EnterCoin = () => {
 						<Form>
 							<div class="field-row">
 								<label htmlFor="coin" for="text17">
-									COIN:
+									TITLE:
 								</label>
 								<Field
 									className="text"
@@ -76,19 +114,21 @@ const EnterCoin = () => {
 									id="text24"
 									type="number"
 									name="amount"
-									placeholder="0"
+									placeholder="$"
 								/>
 							</div>
 
-							<Button type="submit">ADD COIN</Button>
+							<Button type="submit">ENTER</Button>
 						</Form>
 					</Formik>
 				</WindowContent>
 			</Window>
+
+			{/*ANCHOR TOTAL VALUE  */}
 		</CoinInput>
 	);
 };
 
 //ReactDOM.render(<Basic />, document.getElementById("root"));
 
-export { EnterCoin, assets };
+export { EnterCoin };

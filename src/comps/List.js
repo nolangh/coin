@@ -20,7 +20,7 @@ const AssetList = () => {
 	return (
 		<Main>
 			<Window>
-				<Bar className="bar">ASSETS</Bar>
+				<Bar className="bar">RECORD</Bar>
 				<WindowContent>
 					<h1>placeholder</h1>
 				</WindowContent>

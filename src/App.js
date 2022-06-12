@@ -37,7 +37,6 @@ const App = () => (
 		<GlobalStyles />
 		<ThemeProvider theme={original}>
 			<div className="top-container">
-				<TotalValue />
 				<EnterCoin />
 			</div>
 			<div className="bottom-container">
