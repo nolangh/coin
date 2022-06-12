@@ -47,7 +47,6 @@ const assets = [{}];
 
 const EnterCoin = () => {
 	const [currentValue, sum] = useValue(0);
-	const [inputValue, setInputValue] = useState("");
 
 	return (
 		<CoinInput>
@@ -117,4 +116,4 @@ const EnterCoin = () => {
 
 //ReactDOM.render(<Basic />, document.getElementById("root"));
 
-export { EnterCoin, TotalAssets };
+export { EnterCoin, TotalAssets, assets };
