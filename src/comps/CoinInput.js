@@ -3,7 +3,8 @@ import { useState } from "react";
 import { Formik, Field, Form } from "formik";
 import "98.css";
 import { useValue } from "../hooks/useValue";
-import { Window, WindowContent, Button, Bar, Divider } from "react95";
+import { useList } from "../hooks/useList";
+import { Window, WindowContent, Button, Bar, Divider, Fieldset } from "react95";
 import styled from "styled-components";
 
 /* --------------------------------- Styles --------------------------------- */
@@ -11,6 +12,7 @@ const CoinInput = styled.div`
 	display: flex;
 	flex-direction: row;
 	width: 100%;
+	height: 30%;
 	padding: 5rem;
 	background-color: lightyellow;
 	.form {
@@ -40,77 +42,116 @@ const Wrapper = styled.div`
 	}
 `;
 
+const BottomCont = styled.div`
+	background: #0000ff;
+	width: 100%;
+	height: 70%;
+`;
+
+const App = styled.div`
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+`;
+
+const Main = styled.div`
+	display: flex;
+	width: 50%;
+	justify-content: center;
+	height: 100%;
+	background-color: coral;
+	.window {
+		width: 80%;
+	}
+	.bar {
+		width: 100%;
+		height: 4rem;
+	}
+`;
+
 /* ------------------------------------------------------------------------ */
 
 const TotalAssets = [];
 const assets = [{}];
 
 const EnterCoin = () => {
-	const [currentValue, sum] = useValue(0);
+	const [currentValue, sum] = useValue();
+	const [list, setList] = useList();
 
 	return (
-		<CoinInput>
-			<Wrapper>
+		<App>
+			<CoinInput>
+				{/*ANCHOR TOTAL VALUE  */}
+				<Wrapper>
+					<Window className="window">
+						<Bar className="bar">TOTAL VALUE</Bar>
+						<WindowContent>$ {currentValue}</WindowContent>
+					</Window>
+				</Wrapper>
+
+				{/* ANCHOR ASSET INPUT*/}
 				<Window className="window">
-					<Bar className="bar">TOTAL VALUE</Bar>
-					<WindowContent>$ {currentValue}</WindowContent>
+					<Bar className="bar">ENTER VALUE</Bar>
+					<WindowContent className="windowContent">
+						<Formik
+							className="form"
+							initialValues={{
+								title: "",
+								amount: "",
+							}}
+							onSubmit={async (values) => {
+								await new Promise((r) => setTimeout(r, 500));
+								assets.push(JSON.stringify(values, null, 2));
+								TotalAssets.push(values.amount);
+								console.log(TotalAssets);
+								sum();
+							}}
+						>
+							<Form>
+								<div class="field-row">
+									<label htmlFor="title" for="text17">
+										TITLE:
+									</label>
+									<Field
+										className="text"
+										id="text17"
+										type="text"
+										name="title"
+										placeholder=""
+									/>
+								</div>
+
+								<Divider />
+								<div class="field-row-stacked">
+									<label for="text24" htmlFor="amount">
+										AMOUNT:
+									</label>
+									<Field
+										className="number"
+										id="text24"
+										type="number"
+										name="amount"
+										placeholder="$"
+									/>
+								</div>
+
+								<Button onClick={setList} type="submit">
+									ENTER
+								</Button>
+							</Form>
+						</Formik>
+					</WindowContent>
 				</Window>
-			</Wrapper>
-			<Window className="window">
-				<Bar className="bar">ENTER VALUE</Bar>
-				<WindowContent className="windowContent">
-					<Formik
-						className="form"
-						initialValues={{
-							title: "",
-							amount: "",
-						}}
-						onSubmit={async (values) => {
-							await new Promise((r) => setTimeout(r, 500));
-							assets.push(JSON.stringify(values, null, 2));
-							TotalAssets.push(values.amount);
-							console.log(TotalAssets);
-							sum();
-						}}
-					>
-						<Form>
-							<div class="field-row">
-								<label htmlFor="title" for="text17">
-									TITLE:
-								</label>
-								<Field
-									className="text"
-									id="text17"
-									type="text"
-									name="title"
-									placeholder=""
-								/>
-							</div>
-
-							<Divider />
-							<div class="field-row-stacked">
-								<label for="text24" htmlFor="amount">
-									AMOUNT:
-								</label>
-								<Field
-									className="number"
-									id="text24"
-									type="number"
-									name="amount"
-									placeholder="$"
-								/>
-							</div>
-
-							<Button onClick={sum} type="submit">
-								ENTER
-							</Button>
-						</Form>
-					</Formik>
-				</WindowContent>
-			</Window>
-
-			{/*ANCHOR TOTAL VALUE  */}
-		</CoinInput>
+			</CoinInput>
+			<BottomCont>
+				<Main>
+					<Window className="window">
+						<Bar className="bar">RECORD</Bar>
+						<WindowContent>{list}</WindowContent>
+					</Window>
+				</Main>
+			</BottomCont>
+		</App>
 	);
 };
 

@@ -38,9 +38,6 @@ const App = () => (
 			<div className="top-container">
 				<EnterCoin />
 			</div>
-			<div className="bottom-container">
-				<AssetList />
-			</div>
 		</ThemeProvider>
 	</div>
 );
