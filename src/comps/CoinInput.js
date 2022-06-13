@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Formik, Field, Form } from "formik";
 import "98.css";
 import { useValue } from "../hooks/useValue";
-import { useList } from "../hooks/useList";
+import useList from "../hooks/useList";
 import { Window, WindowContent, Button, Bar, Divider, Fieldset } from "react95";
 import styled from "styled-components";
 
@@ -141,9 +141,7 @@ const EnterCoin = () => {
 									/>
 								</div>
 
-								<Button onClick={setUpdate} type="submit">
-									ENTER
-								</Button>
+								<Button type="submit">ENTER</Button>
 							</Form>
 						</Formik>
 					</WindowContent>
@@ -153,7 +151,9 @@ const EnterCoin = () => {
 				<Main>
 					<Window className="window">
 						<Bar className="bar">RECORD</Bar>
-						<WindowContent>{list}</WindowContent>
+						<WindowContent>
+							<ListDiv>{list}</ListDiv>
+						</WindowContent>
 					</Window>
 				</Main>
 			</BottomCont>
