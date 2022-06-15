@@ -75,13 +75,20 @@ const ListDiv = styled.div`
 `;
 
 /* ------------------------------------------------------------------------ */
-
 const TotalAssets = [];
 const assets = [{}];
 
+function list(props) {
+	const assets = props.assets;
+	const assetList = assets.map((asset) => (
+		<li key={asset.number}>{asset.number}</li>
+	));
+	return <ul>{assetList}</ul>;
+}
+
 const EnterCoin = () => {
 	const [currentValue, sum] = useValue();
-	const [list, setUpdate] = useList();
+	//const [list, setUpdate] = useList();
 
 	return (
 		<App>
@@ -110,7 +117,6 @@ const EnterCoin = () => {
 								TotalAssets.push(values.amount);
 								console.log(assets);
 								sum();
-								setUpdate();
 							}}
 						>
 							<Form>
@@ -151,9 +157,7 @@ const EnterCoin = () => {
 				<Main>
 					<Window className="window">
 						<Bar className="bar">RECORD</Bar>
-						<WindowContent>
-							<ListDiv>{list}</ListDiv>
-						</WindowContent>
+						<WindowContent onSubmit={list}></WindowContent>
 					</Window>
 				</Main>
 			</BottomCont>

@@ -1,34 +1,12 @@
-import React from "react";
-import { useState } from "react";
-import { assets } from "../comps/CoinInput";
+// import React from "react";
+// import { Fieldset } from "react95";
+// import { assets } from "../comps/CoinInput";
+// function
+// 	const test = assets.map((value) => (
+// 		<li key={value.number}>{value.number}</li>
+// 	));
+// 	return <ul>test</ul>;
 
-//NOTE Figure out why the hell this list wont populate
-const useList = () => {
-	const [list, setList] = useState();
+// };
 
-	const setUpdate = () =>
-		setList(
-			assets.map((element) => (
-				<div>
-					<ul>
-						<h3 key={element.title}>{element.title}</h3>
-						<li key={element.number}>{element.number}</li>
-					</ul>
-				</div>
-			))
-		);
-	return [list, setUpdate];
-};
-
-export { useList };
-
-// 	return (
-// 		<Fieldset label={element.title}>
-// 			<div>
-// 				<ul>
-// 					<li>{element.amount}</li>
-// 				</ul>
-// 			</div>
-// 		</Fieldset>
-// 	);
-// })
+// export default useList;
