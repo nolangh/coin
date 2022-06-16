@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Formik, Field, Form } from "formik";
 import "98.css";
 import { useValue } from "../hooks/useValue";
-import useList from "../hooks/useList";
+import List from "../hooks/useList";
 import { Window, WindowContent, Button, Bar, Divider, Fieldset } from "react95";
 import styled from "styled-components";
 
@@ -23,6 +23,9 @@ const CoinInput = styled.div`
 		}
 	}
 	.inputBar {
+		display: flex;
+		justify-content: center;
+		align-items: center;
 		height: 3rem;
 		width: 100%;
 	}
@@ -82,16 +85,6 @@ const assets = [{}];
 
 const EnterCoin = () => {
 	const [currentValue, sum] = useValue();
-	//const [list, setUpdate] = useList();
-	function list(props) {
-		const assets = props.assets;
-		const assetList = assets.map((asset) => (
-			<div>
-				<li key={asset.number}>{asset.number}</li>
-			</div>
-		));
-		return <ul>{assetList}</ul>;
-	}
 
 	return (
 		<App>
@@ -150,9 +143,7 @@ const EnterCoin = () => {
 									/>
 								</div>
 
-								<Button type="submit" onClick={list}>
-									ENTER
-								</Button>
+								<Button type="submit">ENTER</Button>
 							</Form>
 						</Formik>
 					</WindowContent>
@@ -162,7 +153,9 @@ const EnterCoin = () => {
 				<Main>
 					<Window className="recordWindow">
 						<Bar className="recordBar">RECORD</Bar>
-						<WindowContent>{list}</WindowContent>
+						<WindowContent>
+							<List />
+						</WindowContent>
 					</Window>
 				</Main>
 			</BottomCont>

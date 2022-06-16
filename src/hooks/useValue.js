@@ -6,10 +6,10 @@ const useValue = () => {
 
 	const sum = () =>
 		setCount(
-			TotalAssets.reduce(function(sum, number) {
+			TotalAssets.reduce(function (sum, number) {
 				const arraySum = sum + number;
 				return arraySum;
-			}, 0)
+			})
 		);
 	return [currentValue, sum];
 };
