@@ -13,28 +13,35 @@ const CoinInput = styled.div`
 	flex-direction: row;
 	width: 100%;
 	height: 30%;
-	padding: 5rem;
 	background-color: lightyellow;
+	.inputWindow {
+		height: 100%;
+		background-color: green;
+		padding: 0;
+		.windowContent {
+			background: pink;
+		}
+	}
+	.inputBar {
+		height: 3rem;
+		width: 100%;
+	}
 	.form {
 		background-color: green;
 		padding: 0;
 	}
-
-	.bar {
-		height: 3rem;
-		width: 100%;
-	}
 `;
 
 const Wrapper = styled.div`
-	padding: 5rem;
 	width: 50%;
-	background: ___CSS_0___;
-	.window {
+	justify-content: center;
+	align-items: center;
+
+	.valueWindow {
 		text-align: center;
 		width: 100%;
 	}
-	.bar {
+	.valueBar {
 		text-align: center;
 		height: 3rem;
 		font-size: 2rem;
@@ -60,50 +67,46 @@ const Main = styled.div`
 	justify-content: center;
 	height: 100%;
 	background-color: coral;
-	.window {
+	.recordWindow {
 		width: 80%;
 	}
-	.bar {
+	.recordBar {
 		width: 100%;
 		height: 4rem;
 	}
-`;
-
-const ListDiv = styled.div`
-	width: 100%;
-	height: 3rem;
 `;
 
 /* ------------------------------------------------------------------------ */
 const TotalAssets = [];
 const assets = [{}];
 
-function list(props) {
-	const assets = props.assets;
-	const assetList = assets.map((asset) => (
-		<li key={asset.number}>{asset.number}</li>
-	));
-	return <ul>{assetList}</ul>;
-}
-
 const EnterCoin = () => {
 	const [currentValue, sum] = useValue();
 	//const [list, setUpdate] = useList();
+	function list(props) {
+		const assets = props.assets;
+		const assetList = assets.map((asset) => (
+			<div>
+				<li key={asset.number}>{asset.number}</li>
+			</div>
+		));
+		return <ul>{assetList}</ul>;
+	}
 
 	return (
 		<App>
 			<CoinInput>
 				{/*ANCHOR TOTAL VALUE  */}
 				<Wrapper>
-					<Window className="window">
-						<Bar className="bar">TOTAL VALUE</Bar>
+					<Window className="valueWindow">
+						<Bar className="valueBar">TOTAL VALUE</Bar>
 						<WindowContent>$ {currentValue}</WindowContent>
 					</Window>
 				</Wrapper>
 
 				{/* ANCHOR ASSET INPUT*/}
-				<Window className="window">
-					<Bar className="bar">ENTER VALUE</Bar>
+				<Window className="inputWindow">
+					<Bar className="inputBar">ENTER VALUE</Bar>
 					<WindowContent className="windowContent">
 						<Formik
 							className="form"
@@ -147,7 +150,9 @@ const EnterCoin = () => {
 									/>
 								</div>
 
-								<Button type="submit">ENTER</Button>
+								<Button type="submit" onClick={list}>
+									ENTER
+								</Button>
 							</Form>
 						</Formik>
 					</WindowContent>
@@ -155,9 +160,9 @@ const EnterCoin = () => {
 			</CoinInput>
 			<BottomCont>
 				<Main>
-					<Window className="window">
-						<Bar className="bar">RECORD</Bar>
-						<WindowContent onSubmit={list}></WindowContent>
+					<Window className="recordWindow">
+						<Bar className="recordBar">RECORD</Bar>
+						<WindowContent>{list}</WindowContent>
 					</Window>
 				</Main>
 			</BottomCont>
