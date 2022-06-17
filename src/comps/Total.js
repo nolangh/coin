@@ -8,8 +8,14 @@ const Wrapper = styled.div`
 	width: 50%;
 	justify-content: center;
 	align-items: center;
+	.page-one {
+	}
+	.page-two {
+	}
+	.page-three {
+	}
 
-	.valueWindow {
+	/* .valueWindow {
 		text-align: center;
 		width: 100%;
 	}
@@ -20,7 +26,7 @@ const Wrapper = styled.div`
 		height: 3rem;
 		font-size: 2rem;
 		width: 100%;
-	}
+	} */
 `;
 
 const TotalValue = () => {
@@ -51,7 +57,6 @@ const TotalValue = () => {
 				<Window className="valueWindow">
 					<div class="title-bar">
 						<div class="title-bar-text">Enter Transaction</div>
-						<div class="title-bar-controls"></div>
 					</div>
 					<WindowContent>
 						<Tabs value={activeTab} onChange={handleChange}>
@@ -61,7 +66,7 @@ const TotalValue = () => {
 						</Tabs>
 						<TabBody style={{ height: 300 }}>
 							{activeTab === 0 && (
-								<div>
+								<div className="page-one">
 									<Fieldset>
 										<div style={{ padding: "0.5em 0 0.5em 0" }}>
 											<h1>${total}</h1>
@@ -71,7 +76,7 @@ const TotalValue = () => {
 								</div>
 							)}
 							{activeTab === 1 && (
-								<div>
+								<div className="page-two">
 									<Fieldset>
 										<div>
 											<h3>+ ${income}</h3>
@@ -80,7 +85,7 @@ const TotalValue = () => {
 								</div>
 							)}
 							{activeTab === 2 && (
-								<div>
+								<div className="page-three">
 									<Fieldset>
 										<div>- ${expense}</div>
 									</Fieldset>
