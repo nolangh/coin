@@ -7,7 +7,7 @@ export const Transaction = ({ transaction }) => {
 
 	return (
 		<li className={transaction.amount < 0 ? "minus" : "plus"}>
-			<Fieldset label={transaction.text}>
+			<Fieldset className="fieldset" label={transaction.text}>
 				<Button className="deleteButton">X</Button>
 				<span>
 					{sign}${Math.abs(transaction.amount)}

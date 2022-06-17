@@ -11,12 +11,12 @@ const Main = styled.div`
 	justify-content: center;
 	height: 100%;
 	background-color: coral;
-	.recordWindow {
-		width: 80%;
-	}
 	.recordBar {
 		width: 100%;
 		height: 4rem;
+	}
+	.recordWindow {
+		width: 80%;
 	}
 `;
 
@@ -29,7 +29,7 @@ const AssetList = () => {
 				<Bar className="recordBar">
 					<h2>RECORD</h2>
 				</Bar>
-				<WindowContent>
+				<WindowContent className="recordContent">
 					<ul>
 						{transactions.map((transaction) => (
 							<Transaction key={transaction.id} transaction={transaction} />

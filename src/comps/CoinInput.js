@@ -10,21 +10,20 @@ import styled from "styled-components";
 const CoinInput = styled.div`
 	.inputWindow {
 		height: 100%;
-		background-color: green;
 		padding: 0;
 		.windowContent {
-			background: pink;
 		}
 	}
 	.inputBar {
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		color: white;
+		background-color: #060084;
 		height: 3rem;
 		width: 100%;
 	}
 	.form {
-		background-color: green;
 		padding: 0;
 	}
 `;
@@ -53,8 +52,6 @@ const CoinInput = styled.div`
 // `;
 
 /* ------------------------------------------------------------------------ */
-const TotalAssets = [];
-const assets = [{}];
 
 const EnterCoin = () => {
 	return (
@@ -79,9 +76,9 @@ const EnterCoin = () => {
 						}}
 						onSubmit={async (values) => {
 							await new Promise((r) => setTimeout(r, 500));
-							assets.push(JSON.stringify(values, null, 2));
-							TotalAssets.push(values.amount);
-							console.log(assets);
+							// assets.push(JSON.stringify(values, null, 2));
+							// TotalAssets.push(values.amount);
+							// console.log(assets);
 						}}
 					>
 						<Form>
@@ -123,4 +120,4 @@ const EnterCoin = () => {
 
 //ReactDOM.render(<Basic />, document.getElementById("root"));
 
-export { EnterCoin, TotalAssets, assets };
+export { EnterCoin };
