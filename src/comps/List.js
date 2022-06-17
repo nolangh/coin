@@ -7,9 +7,8 @@ import { Transaction } from "./Transaction";
 const Main = styled.div`
 	display: flex;
 	width: 50%;
-	height: 70;
-	justify-content: center;
 	height: 100%;
+	justify-content: center;
 	background-color: coral;
 	.recordBar {
 		width: 100%;

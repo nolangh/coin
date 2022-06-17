@@ -7,12 +7,9 @@ import {
 	Tabs,
 	TabBody,
 	Fieldset,
-	NumberField,
-	Checkbox,
 } from "react95";
 import styled from "styled-components";
 import { GlobalContext } from "../context/GlobalContext";
-import { useValue } from "../hooks/useValue";
 
 const Wrapper = styled.div`
 	width: 50%;

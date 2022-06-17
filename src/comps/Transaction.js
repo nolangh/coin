@@ -1,14 +1,22 @@
 import { Field } from "formik";
-import React from "react";
+import React, { useStat, useContext } from "react";
 import { Button, Divider, Fieldset } from "react95";
+import { GlobalContext } from "../context/GlobalContext";
 
 export const Transaction = ({ transaction }) => {
+	const { deleteTransaction } = useContext(GlobalContext);
 	const sign = transaction.amount < 0 ? "-" : "+";
 
 	return (
 		<li className={transaction.amount < 0 ? "minus" : "plus"}>
 			<Fieldset className="fieldset" label={transaction.text}>
-				<Button className="deleteButton">X</Button>
+				<Button
+					primary
+					onClick={() => deleteTransaction(transaction.id)}
+					className="deleteButton"
+				>
+					X
+				</Button>
 				<span>
 					{sign}${Math.abs(transaction.amount)}
 				</span>
