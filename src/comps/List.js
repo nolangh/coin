@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Window, WindowContent, Bar, Button } from "react95";
 import styled from "styled-components";
 import { GlobalContext } from "../context/GlobalContext";
+import { Transaction } from "./Transaction";
 
 const Main = styled.div`
 	display: flex;
@@ -31,10 +32,7 @@ const AssetList = () => {
 				<WindowContent>
 					<ul>
 						{transactions.map((transaction) => (
-							<li className="minus">
-								<Button>X</Button>
-								{transaction.text} <span>-{transaction.amount}</span>
-							</li>
+							<Transaction key={transaction.id} transaction={transaction} />
 						))}
 					</ul>
 				</WindowContent>
