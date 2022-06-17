@@ -1,6 +1,7 @@
-// import React, { useState } from "react";
-// import { Window, WindowContent, Bar } from "react95";
-// import styled from "styled-components";
+import React, { useState } from "react";
+import { Window, WindowContent, Bar } from "react95";
+import styled from "styled-components";
+import { useValue } from "../hooks/useValue";
 
 // const Wrapper = styled.div`
 // 	padding: 5rem;
@@ -50,3 +51,33 @@
 // };
 
 // export default TotalValue;
+
+const Wrapper = styled.div`
+	width: 50%;
+	justify-content: center;
+	align-items: center;
+
+	.valueWindow {
+		text-align: center;
+		width: 100%;
+	}
+	.valueBar {
+		text-align: center;
+		height: 3rem;
+		font-size: 2rem;
+		width: 100%;
+	}
+`;
+
+const TotalValue = () => {
+	const [currentValue, sum] = useValue();
+	return (
+		<Wrapper>
+			<Window className="valueWindow">
+				<Bar className="valueBar">TOTAL VALUE</Bar>
+				<WindowContent>$ {currentValue}</WindowContent>
+			</Window>
+		</Wrapper>
+	);
+};
+export default TotalValue;
