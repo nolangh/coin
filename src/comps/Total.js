@@ -1,7 +1,9 @@
+import { Field } from "formik";
 import React, { useState, useContext } from "react";
 import {
 	Window,
 	WindowContent,
+	WindowHeader,
 	Bar,
 	Tab,
 	Tabs,
@@ -65,7 +67,7 @@ const TotalValue = () => {
 					<TabBody style={{ height: 300 }}>
 						{activeTab === 0 && (
 							<div>
-								<Fieldset label="Total Value:">
+								<Fieldset>
 									<div style={{ padding: "0.5em 0 0.5em 0" }}>
 										<h1>${total}</h1>
 									</div>
@@ -75,14 +77,16 @@ const TotalValue = () => {
 						)}
 						{activeTab === 1 && (
 							<div>
-								<div>
-									<h3>+${income}</h3>
-								</div>
+								<Fieldset>
+									<div>
+										<h3>+ ${income}</h3>
+									</div>
+								</Fieldset>
 							</div>
 						)}
 						{activeTab === 2 && (
 							<div>
-								<div>-${expense}</div>
+								<div>- ${expense}</div>
 							</div>
 						)}
 					</TabBody>

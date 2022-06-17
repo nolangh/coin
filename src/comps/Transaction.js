@@ -1,4 +1,4 @@
-import React, { useStat, useContext } from "react";
+import React, { useState, useContext } from "react";
 import { Button, Divider, Fieldset } from "react95";
 import { GlobalContext } from "../context/GlobalContext";
 
