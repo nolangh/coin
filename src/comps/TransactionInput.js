@@ -14,30 +14,42 @@ import {
 	NumberField,
 } from "react95";
 import styled from "styled-components";
-import { state } from "jshint/src/state";
 
 /* --------------------------------- Styles --------------------------------- */
 const FormContainer = styled.div`
 	.inputWindow {
-		height: 100%;
+		width: 30rem;
+		height: 10rem;
 		padding: 0;
 		.windowContent {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			background: green;
+			.transactionForm {
+				display: flex;
+				height: 15rem;
+				flex-direction: column;
+				justify-content: space-between;
+				background-color: coral;
+				width: 28rem;
+			}
 		}
-	}
-	.inputBar {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		color: white;
-		background-color: #060084;
-		height: 3rem;
-		width: 100%;
+
+		.inputBar {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			color: white;
+			background-color: #060084;
+			height: 3rem;
+			width: 100%;
+		}
 	}
 `;
 
-const TransactionForm = styled.div`
-	display: flex;
-	flex-direction: column;
+const TransactionFormContainer = styled.div`
+	height: 100%;
 `;
 
 /* ------------------------------------------------------------------------ */
@@ -64,29 +76,35 @@ const TransactionInput = () => {
 			<Window className="inputWindow">
 				<Bar className="inputBar">Enter Transaction</Bar>
 				<WindowContent className="windowContent">
-					<TransactionForm>
-						<form onSubmit={onSubmit}>
-							<div className="form-control">
-								<label htmlFor="text">Text</label>
+					<TransactionFormContainer>
+						<form className="transactionForm" onSubmit={onSubmit}>
+							<div>
+								<label for="text17">Title: </label>
 								<input
+									style={{ height: 25 }}
+									className="titleInput"
+									id="text17"
 									type="text"
 									value={text}
 									onChange={(e) => setText(e.target.value)}
-									placeholder="Enter text..."
+									placeholder=""
 								/>
 							</div>
-							<div className="form-control">
-								<label htmlFor="amount"></label>
+							<Divider />
+							<div>
+								<label for="text24">Amount: </label>
 								<input
+									style={{ height: 25 }}
+									className="amountInput"
+									id="text24"
 									type="number"
-									value={amount}
+									defaultValue={amount}
 									onChange={(e) => setAmount(e.target.value)}
-									placeholder="Enter amount..."
 								/>
 							</div>
 							<button className="btn">Add transaction</button>
 						</form>
-					</TransactionForm>
+					</TransactionFormContainer>
 				</WindowContent>
 			</Window>
 		</FormContainer>

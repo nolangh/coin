@@ -1,8 +1,6 @@
-/* -------------------------------- Variables ------------------------------- */
-.minus {
-  background: coral;
+.App .minus {
+  color: red;
 }
-
-.plus {
-  background: green;
+.App .plus {
+  border-color: green;
 }/*# sourceMappingURL=App.css.map */

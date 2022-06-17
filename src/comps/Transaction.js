@@ -1,4 +1,3 @@
-import { Field } from "formik";
 import React, { useStat, useContext } from "react";
 import { Button, Divider, Fieldset } from "react95";
 import { GlobalContext } from "../context/GlobalContext";

@@ -41,7 +41,7 @@ const TopContainer = styled.div`
 `;
 
 const BottomContainer = styled.div`
-	background: #0000ff;
+	background: blue;
 	width: 100%;
 	height: 70%;
 `;
@@ -52,10 +52,8 @@ const AppDiv = styled.div`
 	flex-direction: column;
 `;
 
-// NOTE Use this link for chart js https://react-chartjs-2.netlify.app/
-
 const App = () => (
-	<AppDiv>
+	<AppDiv className="App">
 		<GlobalProvider>
 			<GlobalStyles />
 			<ThemeProvider theme={original}>

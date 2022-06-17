@@ -11,11 +11,17 @@ const Main = styled.div`
 	justify-content: center;
 	background-color: coral;
 	.recordBar {
+		display: flex;
+		justify-content: center;
+		align-items: center;
 		width: 100%;
 		height: 4rem;
+		background-color: #060084;
+		color: #ffffff;
 	}
 	.recordWindow {
-		width: 80%;
+		font-size: 2em;
+		width: 60%;
 	}
 `;
 
@@ -26,7 +32,7 @@ const AssetList = () => {
 		<Main>
 			<Window className="recordWindow">
 				<Bar className="recordBar">
-					<h2>RECORD</h2>
+					<h1>RECORD</h1>
 				</Bar>
 				<WindowContent className="recordContent">
 					<ul>
