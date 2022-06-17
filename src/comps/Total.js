@@ -1,15 +1,6 @@
-import { Field } from "formik";
 import React, { useState, useContext } from "react";
-import {
-	Window,
-	WindowContent,
-	WindowHeader,
-	Bar,
-	Tab,
-	Tabs,
-	TabBody,
-	Fieldset,
-} from "react95";
+import Draggable from "react-draggable";
+import { Window, WindowContent, Tab, Tabs, TabBody, Fieldset } from "react95";
 import styled from "styled-components";
 import { GlobalContext } from "../context/GlobalContext";
 
@@ -55,44 +46,51 @@ const TotalValue = () => {
 	).toFixed(2);
 
 	return (
-		<Wrapper>
-			<Window className="valueWindow">
-				<Bar className="valueBar">$$$$$</Bar>
-				<WindowContent>
-					<Tabs value={activeTab} onChange={handleChange}>
-						<Tab value={0}>Total value</Tab>
-						<Tab value={1}>Income</Tab>
-						<Tab value={2}>expenses</Tab>
-					</Tabs>
-					<TabBody style={{ height: 300 }}>
-						{activeTab === 0 && (
-							<div>
-								<Fieldset>
-									<div style={{ padding: "0.5em 0 0.5em 0" }}>
-										<h1>${total}</h1>
-									</div>
-									<br />
-								</Fieldset>
-							</div>
-						)}
-						{activeTab === 1 && (
-							<div>
-								<Fieldset>
-									<div>
-										<h3>+ ${income}</h3>
-									</div>
-								</Fieldset>
-							</div>
-						)}
-						{activeTab === 2 && (
-							<div>
-								<div>- ${expense}</div>
-							</div>
-						)}
-					</TabBody>
-				</WindowContent>
-			</Window>
-		</Wrapper>
+		<Draggable>
+			<Wrapper>
+				<Window className="valueWindow">
+					<div class="title-bar">
+						<div class="title-bar-text">Enter Transaction</div>
+						<div class="title-bar-controls"></div>
+					</div>
+					<WindowContent>
+						<Tabs value={activeTab} onChange={handleChange}>
+							<Tab value={0}>Total value</Tab>
+							<Tab value={1}>Income</Tab>
+							<Tab value={2}>expenses</Tab>
+						</Tabs>
+						<TabBody style={{ height: 300 }}>
+							{activeTab === 0 && (
+								<div>
+									<Fieldset>
+										<div style={{ padding: "0.5em 0 0.5em 0" }}>
+											<h1>${total}</h1>
+										</div>
+										<br />
+									</Fieldset>
+								</div>
+							)}
+							{activeTab === 1 && (
+								<div>
+									<Fieldset>
+										<div>
+											<h3>+ ${income}</h3>
+										</div>
+									</Fieldset>
+								</div>
+							)}
+							{activeTab === 2 && (
+								<div>
+									<Fieldset>
+										<div>- ${expense}</div>
+									</Fieldset>
+								</div>
+							)}
+						</TabBody>
+					</WindowContent>
+				</Window>
+			</Wrapper>
+		</Draggable>
 	);
 };
 export default TotalValue;

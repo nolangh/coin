@@ -10,30 +10,20 @@ import {
 	Divider,
 	Fieldset,
 	WindowHeader,
-	TextField,
-	NumberField,
 } from "react95";
 import styled from "styled-components";
+import Draggable from "react-draggable";
 
 /* --------------------------------- Styles --------------------------------- */
 const FormContainer = styled.div`
 	.inputWindow {
 		width: 30rem;
-		height: 10rem;
 		padding: 0;
-		.windowContent {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			background: green;
-			.transactionForm {
-				display: flex;
-				height: 15rem;
-				flex-direction: column;
-				justify-content: space-between;
-				background-color: coral;
-				width: 28rem;
-			}
+		.amountInput {
+			margin: 1rem;
+		}
+		.titleInput {
+			margin: 1rem;
 		}
 
 		.inputBar {
@@ -46,10 +36,6 @@ const FormContainer = styled.div`
 			width: 100%;
 		}
 	}
-`;
-
-const TransactionFormContainer = styled.div`
-	height: 100%;
 `;
 
 /* ------------------------------------------------------------------------ */
@@ -71,43 +57,49 @@ const TransactionInput = () => {
 	};
 
 	return (
-		<FormContainer>
-			{/* ANCHOR ASSET INPUT*/}
-			<Window className="inputWindow">
-				<Bar className="inputBar">Enter Transaction</Bar>
-				<WindowContent className="windowContent">
-					<TransactionFormContainer>
+		<Draggable>
+			<FormContainer>
+				{/* ANCHOR ASSET INPUT*/}
+				<Window className="inputWindow">
+					{/* <Bar className="inputBar">Enter Transaction</Bar> */}
+					<div class="title-bar">
+						<div class="title-bar-text">Enter Transaction</div>
+						<div class="title-bar-controls"></div>
+					</div>
+					<WindowContent className="windowContent">
 						<form className="transactionForm" onSubmit={onSubmit}>
-							<div>
-								<label for="text17">Title: </label>
-								<input
-									style={{ height: 25 }}
-									className="titleInput"
-									id="text17"
-									type="text"
-									value={text}
-									onChange={(e) => setText(e.target.value)}
-									placeholder=""
-								/>
+							<div className="formDiv">
+								<div>
+									<label for="text17">Title: </label>
+									<input
+										style={{ height: 25 }}
+										className="titleInput"
+										id="text17"
+										type="text"
+										value={text}
+										onChange={(e) => setText(e.target.value)}
+										placeholder=""
+									/>
+								</div>
+								<Divider />
+								<div>
+									<label for="text24">Amount: </label>
+									<input
+										style={{ height: 25 }}
+										className="amountInput"
+										id="text24"
+										type="number"
+										defaultValue={amount}
+										onChange={(e) => setAmount(e.target.value)}
+									/>
+								</div>
+								<button className="btn">Add transaction</button>
 							</div>
-							<Divider />
-							<div>
-								<label for="text24">Amount: </label>
-								<input
-									style={{ height: 25 }}
-									className="amountInput"
-									id="text24"
-									type="number"
-									defaultValue={amount}
-									onChange={(e) => setAmount(e.target.value)}
-								/>
-							</div>
-							<button className="btn">Add transaction</button>
 						</form>
-					</TransactionFormContainer>
-				</WindowContent>
-			</Window>
-		</FormContainer>
+					</WindowContent>
+				</Window>
+			</FormContainer>
+		</Draggable>
 	);
 };
 
