@@ -10,7 +10,7 @@ import ms_sans_serif from "react95/dist/fonts/ms_sans_serif.woff2";
 import ms_sans_serif_bold from "react95/dist/fonts/ms_sans_serif_bold.woff2";
 import { GlobalProvider } from "./context/GlobalContext";
 import AssetList from "./comps/List";
-import { EnterCoin } from "./comps/CoinInput";
+import { TransactionInput } from "./comps/TransactionInput";
 import TotalValue from "./comps/Total";
 
 const GlobalStyles = createGlobalStyle`
@@ -62,7 +62,7 @@ const App = () => (
 				{/* Top Half */}
 				<TopContainer>
 					<TotalValue />
-					<EnterCoin />
+					<TransactionInput />
 				</TopContainer>
 				{/* Bottom Half */}
 				<BottomContainer>
