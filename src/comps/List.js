@@ -1,6 +1,7 @@
-import { Window, WindowContent, Bar } from "react95";
+import React, { useContext } from "react";
+import { Window, WindowContent, Bar, Button } from "react95";
 import styled from "styled-components";
-import { useValue } from "../hooks/useValue";
+import { GlobalContext } from "../context/GlobalContext";
 
 const Main = styled.div`
 	display: flex;
@@ -19,11 +20,24 @@ const Main = styled.div`
 `;
 
 const AssetList = () => {
+	const { transactions } = useContext(GlobalContext);
+
 	return (
 		<Main>
 			<Window className="recordWindow">
-				<Bar className="recordBar">RECORD</Bar>
-				<WindowContent></WindowContent>
+				<Bar className="recordBar">
+					<h2>RECORD</h2>
+				</Bar>
+				<WindowContent>
+					<ul>
+						{transactions.map((transaction) => (
+							<li className="minus">
+								<Button>X</Button>
+								{transaction.text} <span>-{transaction.amount}</span>
+							</li>
+						))}
+					</ul>
+				</WindowContent>
 			</Window>
 		</Main>
 	);
