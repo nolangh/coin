@@ -1,33 +1,33 @@
 import React from "react";
 import "98.css";
-import { Divider } from "react95";
 import styled from "styled-components";
+import Time from "./setTime";
 
 const Wrapper = styled.div`
 	width: 100%;
 	position: fixed;
 	bottom: 0;
 	.window {
+		display: flex;
+		align-items: center;
+		padding-top: 0.5em;
+		font-size: x-large;
+		justify-content: flex-end;
 		height: 2rem;
 		width: 100%;
 	}
 	.window-body {
-		font-size: larger;
-		display: flex;
-		flex-direction: row;
-		justify-content: flex-end;
+		margin-right: 2rem;
 	}
 `;
 
 const BottomBar = () => {
-	const time = new Date();
-
 	return (
 		<>
 			<Wrapper>
 				<div class="window">
 					<div class="window-body">
-						<div class="time">{time}</div>
+						<Time />
 					</div>
 				</div>
 			</Wrapper>
