@@ -1,13 +1,15 @@
 import React, { useContext } from "react";
 import Draggable from "react-draggable";
-import { Window, WindowContent, Bar, Button } from "react95";
+import { Window, WindowContent } from "react95";
 import styled from "styled-components";
 import { GlobalContext } from "../context/GlobalContext";
 import { Transaction } from "./Transaction";
 
 const Main = styled.div`
-	display: flex;
-	justify-content: center;
+	height: 20%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
 	.title-bar {
 		display: flex;
 		justify-content: center;
@@ -27,7 +29,7 @@ const AssetList = () => {
 
 	return (
 		<Main>
-			<Draggable>
+			<Draggable bounds="body">
 				<Window className="recordWindow">
 					<div class="title-bar">
 						<div class="title-bar-text">Transactions</div>

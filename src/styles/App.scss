@@ -1,8 +1,12 @@
 .App {
+	height: 100vh;
+	width: 100vw;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
 	background-image: url("./images/windows95.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
-	overflow: hidden;
 
 	.minus {
 		border-right: solid 5px red;

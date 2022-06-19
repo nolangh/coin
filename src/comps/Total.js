@@ -5,15 +5,8 @@ import styled from "styled-components";
 import { GlobalContext } from "../context/GlobalContext";
 
 const Wrapper = styled.div`
-	justify-content: center;
-	align-items: center;
-	.page-one {
-	}
-	.page-two {
-	}
-	.page-three {
-	}
-
+	height: 20%;
+	width: 100%;
 	.valueWindow {
 		text-align: center;
 		width: 30rem;
@@ -27,16 +20,6 @@ const Wrapper = styled.div`
 	.title-bar-text {
 		font-size: x-large;
 	}
-
-	/*
-	.valueBar {
-		text-align: center;
-		background-color: #060084;
-		color: #ffffff;
-		height: 3rem;
-		font-size: 2rem;
-		width: 100%;
-	} */
 `;
 
 const TotalValue = () => {
@@ -63,7 +46,7 @@ const TotalValue = () => {
 
 	return (
 		<Wrapper>
-			<Draggable>
+			<Draggable bounds="body">
 				<Window className="valueWindow">
 					<div className="title-bar">
 						<div className="title-bar-text">Break Down</div>

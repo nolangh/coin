@@ -8,13 +8,17 @@ import Draggable from "react-draggable";
 
 /* --------------------------------- Styles --------------------------------- */
 const FormContainer = styled.div`
+	height: 20%;
+	width: 100%;
+
+	padding: 0;
+	margin: 0;
 	.title-bar-text {
 		font-size: x-large;
 		text-align: center;
 	}
 	.inputWindow {
 		width: 30rem;
-		padding: 0;
 		.amountInput {
 			margin: 1rem;
 		}
@@ -33,6 +37,9 @@ const FormContainer = styled.div`
 			flex-direction: row;
 			justify-content: center;
 			align-items: center;
+			.btn {
+				width: 100%;
+			}
 		}
 	}
 `;
@@ -56,11 +63,9 @@ const TransactionInput = () => {
 	};
 
 	return (
-		<Draggable>
-			<FormContainer>
-				{/* ANCHOR ASSET INPUT*/}
+		<FormContainer>
+			<Draggable bounds="body">
 				<Window className="inputWindow">
-					{/* <Bar className="inputBar">Enter Transaction</Bar> */}
 					<div class="title-bar">
 						<div class="title-bar-text">Enter Transaction</div>
 						<div class="title-bar-controls"></div>
@@ -75,6 +80,7 @@ const TransactionInput = () => {
 										className="titleInput"
 										id="text17"
 										type="text"
+										required
 										value={text}
 										onChange={(e) => setText(e.target.value)}
 										placeholder="Enter Title"
@@ -88,20 +94,21 @@ const TransactionInput = () => {
 										className="amountInput"
 										id="text24"
 										type="number"
-										placeholder="Enter Amount"
+										required
+										placeholder="use - for expense"
 										defaultValue={amount}
 										onChange={(e) => setAmount(e.target.value)}
 									/>
 								</div>
 								<div className="btn-cont">
-									<button className="btn">Add transaction</button>
+									<button className="btn">Submit</button>
 								</div>
 							</div>
 						</form>
 					</WindowContent>
 				</Window>
-			</FormContainer>
-		</Draggable>
+			</Draggable>
+		</FormContainer>
 	);
 };
 

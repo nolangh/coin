@@ -13,6 +13,7 @@ function Time() {
 			clearInterval(timerId);
 		};
 	}, []);
+
 	return <span>{date.toLocaleTimeString()}</span>;
 }
 export default Time;

@@ -1,23 +1,24 @@
 import React from "react";
 import "98.css";
 import styled from "styled-components";
+import { Tooltip, Button } from "react95";
 import Time from "./setTime";
 
 const Wrapper = styled.div`
-	width: 100%;
-	position: fixed;
-	bottom: 0;
+	margin: 0;
+	padding: 0;
 	.window {
-		display: flex;
-		align-items: center;
-		padding-top: 0.5em;
-		font-size: x-large;
-		justify-content: flex-end;
-		height: 2rem;
 		width: 100%;
-	}
-	.window-body {
-		margin-right: 2rem;
+		position: fixed;
+		bottom: 0;
+		.window-body {
+			display: flex;
+			font-size: x-large;
+			justify-content: space-between;
+
+			width: 100%;
+			margin: 0;
+		}
 	}
 `;
 
@@ -27,7 +28,15 @@ const BottomBar = () => {
 			<Wrapper>
 				<div class="window">
 					<div class="window-body">
-						<Time />
+						<Tooltip
+							className="tip"
+							text="All windows can be dragged"
+							enterDelay={100}
+							leaveDelay={500}
+						>
+							<Button>Tip</Button>
+						</Tooltip>
+						<Time className="time" />
 					</div>
 				</div>
 			</Wrapper>

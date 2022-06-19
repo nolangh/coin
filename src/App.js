@@ -33,40 +33,18 @@ const GlobalStyles = createGlobalStyle`
   ${styleReset}
 `;
 
-const TopContainer = styled.div`
-	display: flex;
-	flex-direction: row;
-	width: 100%;
-	height: 30%;
-	background-color: lightyellow;
-`;
-
-const BottomContainer = styled.div`
-	background: blue;
-	width: 100%;
-	height: 70%;
-`;
-
-const AppDiv = styled.div`
-	height: 100vh;
-	display: flex;
-	flex-direction: column;
-`;
-
 const App = () => (
-	<AppDiv className="App">
+	<div className="App">
 		<GlobalProvider>
 			<GlobalStyles />
 			<ThemeProvider theme={original}>
-				{/* Top Half */}
 				<TotalValue />
 				<TransactionInput />
-				{/* Bottom Half */}
 				<AssetList />
 				<BottomBar />
 			</ThemeProvider>
 		</GlobalProvider>
-	</AppDiv>
+	</div>
 );
 
 export default App;
