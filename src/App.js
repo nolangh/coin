@@ -58,14 +58,10 @@ const App = () => (
 			<GlobalStyles />
 			<ThemeProvider theme={original}>
 				{/* Top Half */}
-				<TopContainer>
-					<TotalValue />
-					<TransactionInput />
-				</TopContainer>
+				<TotalValue />
+				<TransactionInput />
 				{/* Bottom Half */}
-				<BottomContainer>
-					<AssetList />
-				</BottomContainer>
+				<AssetList />
 			</ThemeProvider>
 		</GlobalProvider>
 	</AppDiv>

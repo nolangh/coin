@@ -2,20 +2,16 @@ import React from "react";
 import { useState, useContext } from "react";
 import { GlobalContext } from "../context/GlobalContext";
 import "98.css";
-import {
-	Window,
-	WindowContent,
-	Button,
-	Bar,
-	Divider,
-	Fieldset,
-	WindowHeader,
-} from "react95";
+import { Window, WindowContent, Divider } from "react95";
 import styled from "styled-components";
 import Draggable from "react-draggable";
 
 /* --------------------------------- Styles --------------------------------- */
 const FormContainer = styled.div`
+	.title-bar-text {
+		font-size: x-large;
+		text-align: center;
+	}
 	.inputWindow {
 		width: 30rem;
 		padding: 0;
@@ -26,14 +22,17 @@ const FormContainer = styled.div`
 			margin: 1rem;
 		}
 
-		.inputBar {
+		.title-bar {
 			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		.btn-cont {
+			display: flex;
+			margin-top: 2rem;
+			flex-direction: row;
 			justify-content: center;
 			align-items: center;
-			color: white;
-			background-color: #060084;
-			height: 3rem;
-			width: 100%;
 		}
 	}
 `;
@@ -42,7 +41,7 @@ const FormContainer = styled.div`
 
 const TransactionInput = () => {
 	const [text, setText] = useState("");
-	const [amount, setAmount] = useState(0);
+	const [amount, setAmount] = useState();
 	const { addTransaction } = useContext(GlobalContext);
 
 	const onSubmit = (e) => {
@@ -78,7 +77,7 @@ const TransactionInput = () => {
 										type="text"
 										value={text}
 										onChange={(e) => setText(e.target.value)}
-										placeholder=""
+										placeholder="Enter Title"
 									/>
 								</div>
 								<Divider />
@@ -89,11 +88,14 @@ const TransactionInput = () => {
 										className="amountInput"
 										id="text24"
 										type="number"
+										placeholder="Enter Amount"
 										defaultValue={amount}
 										onChange={(e) => setAmount(e.target.value)}
 									/>
 								</div>
-								<button className="btn">Add transaction</button>
+								<div className="btn-cont">
+									<button className="btn">Add transaction</button>
+								</div>
 							</div>
 						</form>
 					</WindowContent>

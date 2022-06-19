@@ -5,7 +5,6 @@ import styled from "styled-components";
 import { GlobalContext } from "../context/GlobalContext";
 
 const Wrapper = styled.div`
-	width: 50%;
 	justify-content: center;
 	align-items: center;
 	.page-one {
@@ -15,10 +14,21 @@ const Wrapper = styled.div`
 	.page-three {
 	}
 
-	/* .valueWindow {
+	.valueWindow {
 		text-align: center;
-		width: 100%;
+		width: 30rem;
 	}
+	.title-bar {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.title-bar-text {
+		font-size: x-large;
+	}
+
+	/*
 	.valueBar {
 		text-align: center;
 		background-color: #060084;
@@ -55,8 +65,8 @@ const TotalValue = () => {
 		<Wrapper>
 			<Draggable>
 				<Window className="valueWindow">
-					<div class="title-bar">
-						<div class="title-bar-text">Enter Transaction</div>
+					<div className="title-bar">
+						<div className="title-bar-text">Break Down</div>
 					</div>
 					<WindowContent>
 						<Tabs value={activeTab} onChange={handleChange}>

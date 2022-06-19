@@ -1,10 +1,15 @@
 .App {
+  background-image: url("./images/windows95.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
   overflow: hidden;
 }
 .App .minus {
-  -webkit-text-decoration-color: red;
-          text-decoration-color: red;
+  border-right: solid 5px red;
 }
 .App .plus {
-  border-color: green;
+  border-right: solid 5px green;
+}
+.App .deleteButton {
+  margin-right: 2em;
 }/*# sourceMappingURL=App.css.map */

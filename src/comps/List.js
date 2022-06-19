@@ -12,13 +12,13 @@ const Main = styled.div`
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		font-size: 2rem;
+		font-size: x-large;
 		width: 100%;
 		height: 2.5rem;
 	}
 	.recordWindow {
 		font-size: 2em;
-		width: 25%;
+		width: 30rem;
 	}
 `;
 
@@ -31,11 +31,7 @@ const AssetList = () => {
 				<Window className="recordWindow">
 					<div class="title-bar">
 						<div class="title-bar-text">Transactions</div>
-						<div class="title-bar-controls"></div>
 					</div>
-					{/* <Bar className="recordBar">
-						<h1>RECORD</h1>
-					</Bar> */}
 					<WindowContent className="recordContent">
 						<ul>
 							{transactions.map((transaction) => (
