@@ -12,6 +12,7 @@ import { GlobalProvider } from "./context/GlobalContext";
 import AssetList from "./comps/List";
 import { TransactionInput } from "./comps/TransactionInput";
 import TotalValue from "./comps/Total";
+import BottomBar from "./comps/BottomBar";
 
 const GlobalStyles = createGlobalStyle`
   @font-face {
@@ -62,6 +63,7 @@ const App = () => (
 				<TransactionInput />
 				{/* Bottom Half */}
 				<AssetList />
+				<BottomBar />
 			</ThemeProvider>
 		</GlobalProvider>
 	</AppDiv>
