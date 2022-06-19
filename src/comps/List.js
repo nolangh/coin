@@ -7,7 +7,6 @@ import { Transaction } from "./Transaction";
 
 const Main = styled.div`
 	display: flex;
-	height: 100%;
 	justify-content: center;
 	.title-bar {
 		display: flex;
@@ -19,7 +18,7 @@ const Main = styled.div`
 	}
 	.recordWindow {
 		font-size: 2em;
-		width: 60%;
+		width: 25%;
 	}
 `;
 
@@ -27,11 +26,11 @@ const AssetList = () => {
 	const { transactions } = useContext(GlobalContext);
 
 	return (
-		<Draggable>
-			<Main>
+		<Main>
+			<Draggable>
 				<Window className="recordWindow">
 					<div class="title-bar">
-						<div class="title-bar-text">Record</div>
+						<div class="title-bar-text">Transactions</div>
 						<div class="title-bar-controls"></div>
 					</div>
 					{/* <Bar className="recordBar">
@@ -45,8 +44,8 @@ const AssetList = () => {
 						</ul>
 					</WindowContent>
 				</Window>
-			</Main>
-		</Draggable>
+			</Draggable>
+		</Main>
 	);
 };
 

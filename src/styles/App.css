@@ -1,5 +1,9 @@
+.App {
+  overflow: hidden;
+}
 .App .minus {
-  color: red;
+  -webkit-text-decoration-color: red;
+          text-decoration-color: red;
 }
 .App .plus {
   border-color: green;

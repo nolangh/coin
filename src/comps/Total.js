@@ -52,8 +52,8 @@ const TotalValue = () => {
 	).toFixed(2);
 
 	return (
-		<Draggable>
-			<Wrapper>
+		<Wrapper>
+			<Draggable>
 				<Window className="valueWindow">
 					<div class="title-bar">
 						<div class="title-bar-text">Enter Transaction</div>
@@ -94,8 +94,8 @@ const TotalValue = () => {
 						</TabBody>
 					</WindowContent>
 				</Window>
-			</Wrapper>
-		</Draggable>
+			</Draggable>
+		</Wrapper>
 	);
 };
 export default TotalValue;
