@@ -34,7 +34,7 @@ const BottomBar = () => {
 							enterDelay={100}
 							leaveDelay={500}
 						>
-							<Button>Tip</Button>
+							<Button>Start</Button>
 						</Tooltip>
 						<Time className="time" />
 					</div>
