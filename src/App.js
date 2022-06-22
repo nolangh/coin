@@ -12,6 +12,7 @@ import { GlobalProvider } from "./context/GlobalContext";
 import AssetList from "./comps/List";
 import { TransactionInput } from "./comps/TransactionInput";
 import TotalValue from "./comps/Total";
+import Note from "./comps/Note";
 import BottomBar from "./comps/BottomBar";
 
 const GlobalStyles = createGlobalStyle`
@@ -41,6 +42,7 @@ const App = () => (
 				<TotalValue />
 				<TransactionInput />
 				<AssetList />
+				<Note />
 				<BottomBar />
 			</ThemeProvider>
 		</GlobalProvider>

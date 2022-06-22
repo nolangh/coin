@@ -14,7 +14,7 @@ const Main = styled.div`
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		font-size: x-large;
+		font-size: large;
 		width: 100%;
 		height: 2.5rem;
 	}

@@ -1,12 +1,12 @@
 import React, { useState, useContext } from "react";
 import Draggable from "react-draggable";
 import { Window, WindowContent, Tab, Tabs, TabBody, Fieldset } from "react95";
+import "98.css";
 import styled from "styled-components";
 import { GlobalContext } from "../context/GlobalContext";
 
 const Wrapper = styled.div`
 	height: 20%;
-	width: 100%;
 	.valueWindow {
 		text-align: center;
 		width: 30rem;
@@ -18,7 +18,7 @@ const Wrapper = styled.div`
 	}
 
 	.title-bar-text {
-		font-size: x-large;
+		font-size: large;
 	}
 `;
 
@@ -47,17 +47,17 @@ const TotalValue = () => {
 	return (
 		<Wrapper>
 			<Draggable bounds="body">
-				<Window className="valueWindow">
+				<Window className="valueWindow" class="window">
 					<div className="title-bar">
 						<div className="title-bar-text">Break Down</div>
 					</div>
-					<WindowContent>
+					<WindowContent class="window-body">
 						<Tabs value={activeTab} onChange={handleChange}>
 							<Tab value={0}>Total value</Tab>
 							<Tab value={1}>Income</Tab>
 							<Tab value={2}>expenses</Tab>
 						</Tabs>
-						<TabBody style={{ height: 300 }}>
+						<TabBody>
 							{activeTab === 0 && (
 								<div className="page-one">
 									<Fieldset>
