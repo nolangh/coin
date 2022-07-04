@@ -18,6 +18,7 @@ const FormContainer = styled.div`
 		text-align: center;
 	}
 	.inputWindow {
+		cursor: grab;
 		width: 30rem;
 		.amountInput {
 			margin: 1rem;

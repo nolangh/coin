@@ -19,6 +19,7 @@ const Main = styled.div`
 		height: 2.5rem;
 	}
 	.recordWindow {
+		cursor: grab;
 		font-size: 2em;
 		width: 30rem;
 	}

@@ -8,6 +8,7 @@ const Wrapper = styled.div`
 	height: 20%;
 	width: 100%;
 	.valueWindow {
+		cursor: grab;
 		text-align: center;
 		width: 30rem;
 	}
