@@ -14,7 +14,7 @@ const FormContainer = styled.div`
 	padding: 0;
 	margin: 0;
 	.title-bar-text {
-		font-size: x-large;
+		font-size: large;
 		text-align: center;
 	}
 	.inputWindow {

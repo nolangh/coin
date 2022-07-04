@@ -13,9 +13,9 @@ const Wrapper = styled.div`
 		bottom: 0;
 		.window-body {
 			display: flex;
-			font-size: x-large;
+			font-size: medium;
 			justify-content: space-between;
-
+			align-items: center;
 			width: 100%;
 			margin: 0;
 		}
@@ -34,7 +34,7 @@ const BottomBar = () => {
 							enterDelay={100}
 							leaveDelay={500}
 						>
-							<Button>Tip</Button>
+							<Button>Start</Button>
 						</Tooltip>
 						<Time className="time" />
 					</div>
