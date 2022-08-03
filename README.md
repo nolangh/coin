@@ -1,6 +1,6 @@
 # STEPS TO RUN PROGRAM
 
-Clone Repo
-cd into folder
-Run npm install
-run "npm start"
+1.Clone Repo
+2.cd into folder
+3.Run npm install
+4.run "npm start"
