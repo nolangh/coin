@@ -28,14 +28,7 @@ const BottomBar = () => {
 			<Wrapper>
 				<div class="window">
 					<div class="window-body">
-						<Tooltip
-							className="tip"
-							text="All windows can be dragged"
-							enterDelay={100}
-							leaveDelay={500}
-						>
-							<Button>Start</Button>
-						</Tooltip>
+						<Button>Start</Button>
 						<Time className="time" />
 					</div>
 				</div>
