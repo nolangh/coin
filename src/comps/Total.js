@@ -7,6 +7,7 @@ import { GlobalContext } from "../context/GlobalContext";
 
 const Wrapper = styled.div`
 	height: 20%;
+	max-width: 30rem;
 	.valueWindow {
 		cursor: grab;
 		text-align: center;
